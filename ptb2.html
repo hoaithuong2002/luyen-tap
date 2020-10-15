@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phương trình bậc 2</title>
+</head>
+<body>
+<h2>Bảng tính</h2>
+<h3 id="error1">Hãy đưa ra biến số</h3>
+<div class="rovnice">
+    <input type="tel" value="a" id="a"> <span class="prom">x<sup>2</sup></span> +
+    <input type="tel" value="b" id="b"> <span class="prom">x</span> +
+    <input type="tel" value="c" id="c"> =&nbsp;0
+    <br>
+    <button onclick="gptb2()"> ket qua</button>
+</div>
+<p id="ketqua"></p>
+<script>
+    function gptb2() {
+        let a = document.getElementById('a').value;
+        let b = document.getElementById('b').value;
+        let c = document.getElementById('c').value;
+        let delta = (b * b) - 4 * a * c
+        if (delta < 0) {
+            alert('phương trình vô nghiệm')
+        } else if (delta === 0) {
+            let x = -b / (2 * a);
+            alert('phương trình có nghiệm kép=' + x)
+        } else {
+            let x1 = (-b - Math.sqrt(delta)) / (2 * a);
+            let x2 = (-b + Math.sqrt(delta)) / (2 * a);
+            alert('phương trình có 2 nghiệm: x1 =' + x1 + ' va x2 = ' + x2)
+        }
+
+    }
+</script>
+
+</body>
+</html>
