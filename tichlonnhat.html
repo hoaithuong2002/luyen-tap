@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính tích lớn nhất</title>
+</head>
+<body>
+<script>
+    let arr = [-3, 7, 8, 9, 10];
+    let area = 0;
+    let max = 0;
+    for (let i = 0; i < arr.length - 1; i++) {
+        area = arr[i] * arr[i + 1];
+        if (area > max) {
+            max = area;
+        }
+
+    }
+    alert(max);
+
+</script>
+</body>
+</html>
