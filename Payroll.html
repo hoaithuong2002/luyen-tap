@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>tính lương</title>
 </head>
 <body>
-$END$
+<input type="text" placeholder="nhập số lương" id="money">
+<select name="bậc" id="bac">
+    <option value="bac1">bac1</option>
+    <option value="bac2">bac2</option>
+    <option value="bac3">bac3</option>
+</select>
+<button onclick="payroll()"> kết quả</button>
+<p id="ketqua"></p>
+<script>
+    function payroll() {
+        let money = +document.getElementById('money').value;
+        let bac = document.getElementById('bac').value;
+        if (bac == 'bac1') {
+            luong = money + money * 0.1;
+
+        } else if (bac == 'bac2') {
+            luong = money + money * 0.3;
+        } else {
+            luong = money + money * 0.5;
+        }
+        document.getElementById('ketqua').innerHTML = luong;
+        if (luong <= 20000000) {
+            alert(' không phải nộp thuế')
+        } else if (luong > 2000000 && luong < 5000000) {
+            thue = luong * 0.2;
+            luong = luong - thue;
+        } else {
+            thue = luong * 0.3;
+            luong = luong - thue;
+        }
+        document.getElementById('ketqua').innerHTML = thue;
+    }
+
+</script>
 </body>
 </html>
